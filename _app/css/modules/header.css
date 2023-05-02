@@ -29,6 +29,17 @@ list-style: none;
 gap: 10rem;
 font-size: var(--large-font-size);
 }
+.navigation__list a{
+	transition: all 0.3s;
+}
+
+.navigation__list a:hover{
+	color: #ffff;
+}
+
+a:visited {
+	color: inherit;
+}
 
 
 /* .header__navigation--visible {
