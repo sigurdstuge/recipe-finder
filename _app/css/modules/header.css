@@ -1,8 +1,35 @@
 .header {
+	width: 100%;
+	background: var(--secundary-color);
+	padding: 1rem;
+	position: sticky;
+	top: 0;
 }
 
 .header__navigation {
+	display: flex;
+	flex-direction: row;
+	gap: 10rem;
+	align-items: center;
 }
 
-.header__navigation--visible {
+.navigation__logo {
+	width: 10rem;
 }
+
+.navigation__logo img {
+	width: 100%;
+	height: auto;
+} 
+
+.navigation__list {
+display: flex;
+flex-direction: row;
+list-style: none;
+gap: 10rem;
+font-size: var(--large-font-size);
+}
+
+
+/* .header__navigation--visible {
+} */
