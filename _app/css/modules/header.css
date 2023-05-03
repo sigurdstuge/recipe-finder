@@ -1,9 +1,11 @@
 .header {
 	width: 100%;
+	height: 15rem;
 	background: var(--secundary-color);
 	padding: 1.5rem;
 	position: sticky;
 	top: 0;
+	z-index: 2;
 }
 
 .header__navigation {
@@ -45,10 +47,6 @@ a:visited {
 /* .header__navigation--visible {
 } */
 
-
-.header__search-button {
-  }
-
 .header__search-button-image {
 	width: 3.5rem;
 }
@@ -56,13 +54,28 @@ a:visited {
 
 
 .header__search-field {
+	display: none;
+}
+
+.header__search-field--open {
+	position: absolute;
+	top: 15rem;
 	width: 100%;
 	text-align: center;
 	font-size: var(--large-font-size);
  	background-color: var(--primary-color);
 	border: solid 1px black;
+	display: block;
+	z-index: 1;
+	transform: translateY(0px);
+	animation: pop-in 200ms ease-in-out;
 }
 
-.header__search-field--open {
-	display: block;
+@keyframes pop-in {
+	0% {
+		transform: translateY(-20px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
 }
