@@ -1,7 +1,7 @@
 .header {
 	width: 100%;
 	background: var(--secundary-color);
-	padding: 1rem;
+	padding: 1.5rem;
 	position: sticky;
 	top: 0;
 }
@@ -9,8 +9,8 @@
 .header__navigation {
 	display: flex;
 	flex-direction: row;
-	gap: 10rem;
-	align-items: center;
+ 	align-items: center;
+	justify-content: space-between;
 }
 
 .navigation__logo {
@@ -44,3 +44,25 @@ a:visited {
 
 /* .header__navigation--visible {
 } */
+
+
+.header__search-button {
+  }
+
+.header__search-button-image {
+	width: 3.5rem;
+}
+
+
+
+.header__search-field {
+	width: 100%;
+	text-align: center;
+	font-size: var(--large-font-size);
+ 	background-color: var(--primary-color);
+	border: solid 1px black;
+}
+
+.header__search-field--open {
+	display: block;
+}
