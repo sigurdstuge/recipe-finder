@@ -19,6 +19,11 @@ export default {
 			type: 'string',
 		},
 		{
+			title: 'Time',
+			name: 'time',
+			type: 'string',
+		},
+		{
 			title: 'Ingredients',
 			name: 'ingredients',
 			type: 'array',
