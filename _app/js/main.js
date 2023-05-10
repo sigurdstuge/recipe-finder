@@ -1,5 +1,5 @@
 import header from "./modules/header.js"
-import recipeCard from "./modules/recipeCard.js"
+import recipeCards from "./modules/recipeCards.js"
 
 header()
-recipeCard()
+recipeCards()
