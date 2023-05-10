@@ -1,6 +1,6 @@
 .card {
 	display: flex;
-	flex-direction: column;
+	flex-flow: row wrap;
 	gap: 2rem;
 	margin-top: 1.5rem; 
 	padding: 2rem;
