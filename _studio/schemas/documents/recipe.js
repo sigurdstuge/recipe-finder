@@ -14,6 +14,15 @@ export default {
 			type: 'string',
 		},
 		{
+			title: 'Slug',
+			name: 'slug',
+			type: 'slug',
+			options: {
+				source: 'name',
+				maxLength: 200
+			 }
+		},
+		{
 			title: 'Difficulty',
 			name: 'difficulty',
 			type: 'string',
@@ -58,15 +67,10 @@ export default {
 		{
 			title: 'Rating',
 			name: 'rating',
-			type: 'string',
-			options: {
-							list: [
-								'1',
-								'2',
-								'3',
-								'4',
-							]
-			}
+			type: 'array',
+			of: [
+				{type: 'number'}
+			]
 		},
 		{
 			title: 'Category',
