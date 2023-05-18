@@ -1,0 +1,41 @@
+.recipe {
+	display: flex;
+	flex-direction: column;
+	max-width: 120rem;
+	margin: 0 auto 30rem auto;
+}
+
+.recipe__container {
+	display: flex;
+ }
+
+.recipe__content-left {
+	width: 50%;
+	padding: 2rem;
+}
+
+.recipe__content-right {
+	width: 50%;
+	padding: 2rem;
+}
+
+.recipe__name {
+	font-size: 3rem;
+	text-align:center;
+}
+
+.recipe__ingredients {
+	font-size: 2.5rem;
+}
+
+.recipe__description {
+	font-size: 2.5rem;
+}
+
+.recipe__ingredients-ingredients {
+	font-size: var(--large-font-size);
+}
+
+.recipe__description-desription {
+	font-size: var(--large-font-size);
+}

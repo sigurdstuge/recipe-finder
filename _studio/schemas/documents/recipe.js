@@ -60,9 +60,21 @@ export default {
 			]
 		},
 		{
-			title: 'Description',
-			name: 'description',
-			type: 'text',
+			title: 'Instructions',
+			name: 'instructions',
+			type: 'array',
+			of: [
+				{
+					type: 'object',
+					fields: [
+						{
+							title: 'Instruction',
+							name: 'instruction',
+							type: 'string',
+						}
+					]
+				}
+			]
 		},
 		{
 			title: 'Rating',

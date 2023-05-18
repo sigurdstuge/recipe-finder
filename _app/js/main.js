@@ -1,5 +1,12 @@
-import header from "./modules/header.js"
-import recipeCards from "./modules/recipeCards.js"
+import header from "./modules/header.js";
+import recipeCards from "./modules/recipeCards.js";
+import recipeSummary from "./modules/recipeSummary.js";
+import search from "./modules/search.js";
+import { readUrl } from "./util/utlis.js";
 
 header()
-recipeCards()
+if(readUrl() !== undefined) {
+	recipeSummary()
+} else {
+	recipeCards()
+}

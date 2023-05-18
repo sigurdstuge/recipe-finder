@@ -1,3 +1,5 @@
+import search from "./search.js";
+
 export default function header() {
 	// data
 	let isSearchOpen = false
@@ -8,7 +10,6 @@ export default function header() {
 
 	// eventlistener
 	searchButton.addEventListener('click', handleSearchButtonClick);
-	searchField.addEventListener('input', handleSearchFieldInput);
 
 	// handler
 
@@ -21,8 +22,4 @@ export default function header() {
 			searchField.classList.remove('header__search-field--open')
 		}
 	}
-
-	function handleSearchFieldInput () {
-		console.log('hei')
- 	}
 }
