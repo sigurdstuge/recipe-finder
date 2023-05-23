@@ -39,3 +39,16 @@
 .recipe__description-desription {
 	font-size: var(--large-font-size);
 }
+
+@media screen and (max-width: 450px) {
+	.recipe {
+		display: flex;
+		flex-flow: column;
+	}
+
+	.recipe__container {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+	 }
+}
