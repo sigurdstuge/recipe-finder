@@ -4,4 +4,5 @@
 
 @import './modules/header.css';
 @import './modules/recipe-card.css';
-@import './modules/recipe-summary.css'
+@import './modules/recipe-summary.css';
+@import './modules/footer.css'

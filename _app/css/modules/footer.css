@@ -1,0 +1,28 @@
+.footer {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+  	background-color: var(--secundary-color);
+	padding: 2rem;
+ }
+
+.footer__item-header {
+	grid-column: 2/3;
+	display: flex;
+	flex-direction: row;
+	gap: 3rem;
+ }
+
+ .footer__item {
+	grid-column: 8/9;
+	display: flex;
+ 	margin-left: 3rem ;
+ 	
+ }
+.footer__list {
+	list-style: none;
+}
+
+.footer__list-element {
+	margin-top: 0.5rem;
+
+ }
