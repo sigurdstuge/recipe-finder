@@ -26,19 +26,23 @@
 
 .recipe__ingredients {
 	font-size: 2.5rem;
+	margin-bottom: 2rem;
 }
 
-.recipe__description {
+.recipe__ingredients-text {
+	font-size: var(--large-font-size);
+	margin-bottom: 1rem;
+	list-style: none;
+}
+
+.recipe__instruction {
 	font-size: 2.5rem;
+	margin-bottom: 2rem;
 }
 
-.recipe__ingredients-ingredients {
+.recipe__instruction-text {
 	font-size: var(--large-font-size);
-}
-
-.recipe__description-desription {
-	font-size: var(--large-font-size);
- 
+	margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 450px) {
