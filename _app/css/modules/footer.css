@@ -26,3 +26,11 @@
 	margin-top: 0.5rem;
 
  }
+
+ .footer__list-element a {
+	transition: all 0.3s;
+ }
+ 
+ .footer__list-element a:hover {
+	color: #ffff;
+ } 

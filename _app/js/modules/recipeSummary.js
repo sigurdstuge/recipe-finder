@@ -35,8 +35,12 @@ export default async function recipeSummary() {
 	async function init() {
 		await setCurrentRecipe();
 		// console.log(recipes);
-		renderHTML()
+		renderHTML();
 	}
+
+/** 
+	 * RenderHTML is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
+	*/
 
 	function renderHTML() {
 		recipes.forEach(recipe => {
@@ -52,45 +56,51 @@ export default async function recipeSummary() {
 			const contentLeft = document.createElement('div');
 			const ingredientsTopic = document.createElement('h3');
 			const ingredientsList = document.createElement('ul');
-			const ingredientLiElement = document.createElement('li');
-			recipe.ingredients.forEach(ingredient => {
-				ingredientLiElement.innerText = `
-				${ingredient.quantity}
-				${ingredient.unit}
-				${ingredient.name}`
-			});
 			
 			const contentRight = document.createElement('div');
 			const instructionTopic = document.createElement('h3');
 			const instructionList = document.createElement('ol');
-			const instructionElement = document.createElement('li')
-			instructionElement.innerText = recipe.instructions.instruction;
-
-			console.log(recipe.instructions)
+			
+			/**
+			 * Gets an array of elements from Sanity and loops over for each and inserts data based on data from Sanity.
+			 */
+			
+			recipe.instructions.forEach(element => {
+				const instructionText = document.createElement('li');
+				instructionText.innerText = element.instruction;
+				instructionText.className = 'recipe__instruction-text';
+				instructionList.append(instructionText);
+			})
+			/**
+			 * Does the same as the one above, but removes the quantity and unit keys if the are not present.
+			 */
+			recipe.ingredients.forEach(element => {
+				const ingredientText = document.createElement('li');
+				if (element.quantity !== undefined && element.unit !== undefined) {
+					ingredientText.innerText = `${element.quantity} ${element.unit} ${element.name}`;
+				} else {
+					ingredientText.innerText = element.name;
+				}
+				ingredientText.className = 'recipe__ingredients-text';
+				ingredientsList.append(ingredientText);
+			});
 			
 			// class name
-			image.className = 'recipe__image'
-			topic.className = 'recipe__name'
+			image.className = 'recipe__image';
+			topic.className = 'recipe__name';
 			
-			container.className = 'recipe__container'
-			contentLeft.className = 'recipe__content-left'
-			ingredientsTopic.className = 'recipe__ingredients'
-			ingredientsList.className = 'recipe__ingredients-list'
-			ingredientLiElement.className = 'recipe__ingredients-ingredients'
+			container.className = 'recipe__container';
+			contentLeft.className = 'recipe__content-left';
+			ingredientsTopic.className = 'recipe__ingredients';
+			ingredientsList.className = 'recipe__ingredients-list';
 			
-			contentRight.className = 'recipe__content-right'
-			instructionTopic.className = 'recipe__description'
-			instructionList.className = 'recipe__description-list'
-			instructionElement.className = 'recipe__description-desription'
-			
-			// innertext
-			// ingredientLiElement.innerText = `
-			// ${ingredient.quantity}
-			// ${ingredient.unit}
-			// ${ingredient.name}`
+			contentRight.className = 'recipe__content-right';
+			instructionTopic.className = 'recipe__instruction';
+			instructionList.className = 'recipe__instruction-list';
+
+			 
 			
 			topic.innerText = recipe.name;
-			instructionElement.innerText = recipe.instructions.instruction
 			ingredientsTopic.innerText = 'Ingredients';
 			instructionTopic.innerText = 'Instructions';
 			
@@ -103,32 +113,24 @@ export default async function recipeSummary() {
 				image,
 				topic,
 				container
-				)
+				);
 			
 			container.append(
 				contentLeft,
 				contentRight
-				)
+				);
 					
 			contentLeft.append(
 				ingredientsTopic,
 				ingredientsList
-				)
-						
-			ingredientsList.append(
-				ingredientLiElement
-				)
+				);
 							
 			contentRight.append(
 				instructionTopic,
 				instructionList
-				)
-								
-			instructionList.append(
-				instructionElement
 				);
-		})
-	}
+		});
+	};
 													
 	init();
 }
