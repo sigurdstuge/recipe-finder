@@ -3,10 +3,11 @@
 	grid-template-columns: repeat(12, 1fr);
   	background-color: var(--secundary-color);
 	padding: 2rem;
+	font-size: 1.5rem;
  }
 
 .footer__item-header {
-	grid-column: 2/3;
+	grid-column: 2/7;
 	display: flex;
 	flex-direction: row;
 	gap: 3rem;
