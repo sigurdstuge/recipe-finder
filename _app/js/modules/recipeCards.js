@@ -41,7 +41,16 @@ export default function recipeCards() {
 			.reduce(
 				(accumulator, current) => accumulator + current, 
 			0);
-			return Math.ceil(sum / ratings.length);
+
+			let averageRating = sum / ratings.length;
+
+			if (Number.isInteger(averageRating)) {
+				// If the number recieved from the database is an integer, it returns the number recieved.
+				return averageRating;
+			} else {
+				// If the number recived from the database has decimals, it return the number with only 1 decimal.
+				return averageRating.toFixed(1)
+			}
 		}
 		return 0;
 	}
