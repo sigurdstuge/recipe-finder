@@ -95,7 +95,8 @@ export default function recipeCards() {
 
 		rating.className = 'card__rating'
 		ratingImage.className = 'rating__image'
-		ratingImage.src = 'https://www.searchenginejournal.com/wp-content/uploads/2021/08/a-guide-to-star-ratings-on-google-and-how-they-work-6123be39b9f2d-sej.jpg'
+		//ratingImage.src = 'https://www.searchenginejournal.com/wp-content/uploads/2021/08/a-guide-to-star-ratings-on-google-and-how-they-work-6123be39b9f2d-sej.jpg';
+		ratingImage.src = `/_app/assets/svg/${Math.floor(calculateRating(card.rating))}.svg`;
 		ratingValue.className = 'rating__value'
 
 		// inner text
