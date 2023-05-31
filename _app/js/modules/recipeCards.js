@@ -22,19 +22,15 @@ export default function recipeCards() {
 	async function setCurrentRecipesList() {
 		recipesList = await fetchRecipeList();
 	}
-	
-	/**
-	 * Gets data from sanity
-	 */
+
+	// Gets data from sanity
 	async function init() {
 		await setCurrentRecipesList();
 		renderRecipesCards();
 		search(recipesList);
 	}
 
-	/** 
-	 * Gets values from Sanity and calculates the sum of each rating.
-	 */
+	// Gets values from Sanity and calculates the sum of each rating.
 	function calculateRating(ratings) {
 		if(ratings!== null && ratings.length > 0) {
 			const sum = ratings
@@ -55,16 +51,11 @@ export default function recipeCards() {
 		return 0;
 	}
 
-	/** 
-	 * RenderRecipeCard is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
-	*/
+	// RenderRecipeCard is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
 	function renderRecipesCards() {
 		recipesList.forEach(card => {
 		
-			/** 
-			*	create elements
-			*	html elements
-			*/
+			// Create HTML elements
 			const recipe = document.createElement('a');
 			const image = document.createElement('img');
 			const name = document.createElement('p');
@@ -77,10 +68,8 @@ export default function recipeCards() {
 			const ratingImage = document.createElement('img');
 			const ratingValue = document.createElement('span');
 			ratingValue.innerText = calculateRating(card.rating);
-			/**
-			 * class
-			 * css classes
-			 */
+			
+			// Classes
 			recipe.className = 'card__container';
 
 			image.className = 'card__image';
@@ -96,15 +85,15 @@ export default function recipeCards() {
 			ratingImage.src = `/_app/assets/svg/${Math.floor(calculateRating(card.rating))}.svg`;
 			ratingValue.className = 'rating__value';
 
-			// inner text
+			// Inner text
 			name.innerText = card?.name;
 			difficulty.innerText = card?.difficulty;
 			time.innerText = card?.time;
 
-			// sources
+			// Sources
 			image.src = card?.cover;
 
-			// links
+			// Links
 			recipe.href = `/recipe/?${card.slug}`;
 
 			// append
