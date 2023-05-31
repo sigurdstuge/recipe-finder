@@ -1,6 +1,7 @@
 import sanity from '../sanity.js';
 
 export default function recipeCards() {
+	console.log('Recipe cards function')
 	const recipesContainer = document.querySelector('.card');
 
 	let recipesList = [];

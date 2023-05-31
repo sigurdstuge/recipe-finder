@@ -5,7 +5,8 @@ import search from "./modules/search.js";
 import { readUrl } from "./util/read-url.js";
 
 header()
-if(readUrl() !== undefined) {
+const URL = readUrl()
+if(URL !== undefined) {
 	recipeSummary()
 } else {
 	recipeCards()
