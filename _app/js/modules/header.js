@@ -2,7 +2,7 @@ import search from "./search.js";
 
 export default function header() {
 	// data
-	let isSearchOpen = false
+	let isSearchOpen = false;
 
 	// queryselector
 	const searchButton = document.querySelector('.header__search-button');
@@ -14,12 +14,12 @@ export default function header() {
 	// handler
 
 	function handleSearchButtonClick() {
-		isSearchOpen = !isSearchOpen
+		isSearchOpen = !isSearchOpen;
  
 		if (isSearchOpen=== true) {
-			searchField.classList.add('header__search-field--open')
-		}else {
-			searchField.classList.remove('header__search-field--open')
-		}
-	}
-}
+			searchField.classList.add('header__search-field--open');
+		} else {
+			searchField.classList.remove('header__search-field--open');
+		};
+	};
+};
