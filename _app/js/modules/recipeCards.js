@@ -88,15 +88,15 @@ export default function recipeCards() {
 			// Inner text
 			name.innerText = card?.name;
 			difficulty.innerText = card?.difficulty;
-			time.innerText = card?.time;
-
+			
 			// Sources
 			image.src = card?.cover;
-
+			
 			// Links
 			recipe.href = `/recipe/?${card.slug}`;
-
-			// append
+			
+			// Append
+			time.innerText = card?.time;
 			recipe.append(image);
 			recipe.append(name);
 
