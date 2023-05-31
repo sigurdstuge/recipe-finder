@@ -107,9 +107,7 @@ export default function recipeCards() {
 			// links
 			recipe.href = `/recipe/?${card.slug}`;
 
-			/**
-			 * append
-			 */
+			// append
 			recipe.append(image);
 			recipe.append(name);
 
