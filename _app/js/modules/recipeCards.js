@@ -118,7 +118,7 @@ export default function recipeCards() {
 
 			recipesContainer.append(recipe);
 			console.log(recipesContainer)
-		});
+		};
 		
 	};
 
