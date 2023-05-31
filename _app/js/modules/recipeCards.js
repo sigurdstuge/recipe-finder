@@ -53,8 +53,8 @@ export default function recipeCards() {
 
 	// RenderRecipeCard is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
 	function renderRecipesCards() {
-		recipesList.forEach(card => {
-		
+		console.log(recipesList)
+		for (const card of recipesList) {
 			// Create HTML elements
 			const recipe = document.createElement('a');
 			const image = document.createElement('img');
@@ -71,6 +71,7 @@ export default function recipeCards() {
 			
 			// Classes
 			recipe.className = 'card__container';
+			console.log('card container');
 
 			image.className = 'card__image';
 
@@ -97,15 +98,22 @@ export default function recipeCards() {
 			recipe.href = `/recipe/?${card.slug}`;
 			
 			// Append
-			recipe.append(image);
-			recipe.append(name);
+			info.append(
+				difficulty,
+				time
+			);
 
-			info.append(difficulty);
-			info.append(time);
-			recipe.append(info);
+			recipe.append(
+				image,
+				name,
+				info
+			);
 
-			rating.append(ratingImage);
-			rating.append(ratingValue);
+			rating.append(
+				ratingImage,
+				ratingValue
+			);
+
 			recipe.append(rating);
 
 			recipesContainer.append(recipe);
