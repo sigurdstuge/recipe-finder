@@ -1,12 +1,8 @@
-import recipe from "../../../_studio/schemas/documents/recipe.js";
 import sanity from "../sanity.js";
-import { readUrl } from "../util/utlis.js";
+import { readUrl } from "../util/read-url.js";
 
 export default async function recipeSummary() {
-	console.log('inn i oppskift');
-
 	const slug = readUrl();
-	
 
 	let recipes = [];
 
@@ -23,8 +19,6 @@ export default async function recipeSummary() {
 			instructions[]
 		}`;
 		
-		console.log('fetching');
-		console.log(await sanity.fetch(query));
 		return await sanity.fetch(query);
 	}
 
@@ -44,10 +38,7 @@ export default async function recipeSummary() {
 
 	function renderHTML() {
 		recipes.forEach(recipe => {
-			console.log(recipe.name)
 			const recipePage = document.querySelector('.recipe');
-			// console.log(recipePage)
-			// create element
 			const image = document.createElement('img');
 			const topic = document.createElement('h1');
 
@@ -113,24 +104,24 @@ export default async function recipeSummary() {
 				image,
 				topic,
 				container
-				);
+			);
 			
 			container.append(
 				contentLeft,
 				contentRight
-				);
+			);
 					
 			contentLeft.append(
 				ingredientsTopic,
 				ingredientsList
-				);
+			);
 							
 			contentRight.append(
 				instructionTopic,
 				instructionList
-				);
+			);
 		});
 	};
 													
 	init();
-}
+};

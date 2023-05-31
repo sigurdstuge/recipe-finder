@@ -22,7 +22,7 @@ export default function search(recipes) {
 	}
 	
 	function getSearchInputValue() {
-		const searchValue = searchField.ariaValueMax;
+		const searchValue = searchField.value;
 
 		return searchValue;
 	}
