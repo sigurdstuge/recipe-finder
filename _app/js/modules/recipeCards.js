@@ -109,6 +109,7 @@ export default function recipeCards() {
 			recipe.append(rating);
 
 			recipesContainer.append(recipe);
+			console.log(recipesContainer)
 		});
 		
 	};
