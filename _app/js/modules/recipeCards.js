@@ -1,8 +1,9 @@
 import sanity from '../sanity.js';
+import search from './search.js';
 
 export default function recipeCards() {
 	const recipesContainer = document.querySelector('.card');
-
+// data
 	let recipesList = [];
 
 	async function fetchRecipeList() {
@@ -23,14 +24,18 @@ export default function recipeCards() {
 		recipesList = await fetchRecipeList();
 	}
 
-	// Gets data from sanity
+	/**
+	 *  Gets data from sanity
+	*/
 	async function init() {
 		await setCurrentRecipesList();
 		renderRecipesCards();
 		search(recipesList);
 	}
 
-	// Gets values from Sanity and calculates the sum of each rating.
+	/** 
+	 * Gets values from Sanity and calculates the sum of each rating.
+	*/ 
 	function calculateRating(ratings) {
 		if(ratings!== null && ratings.length > 0) {
 			const sum = ratings
@@ -51,7 +56,9 @@ export default function recipeCards() {
 		return 0;
 	}
 
-	// RenderRecipeCard is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
+	/**
+	 * RenderRecipeCard is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements 
+	 */ 
 	function renderRecipesCards() {
 		recipesList.forEach(card => {
 		
@@ -112,43 +119,13 @@ export default function recipeCards() {
 				ratingImage,
 				ratingValue
 			);
-			
+
 			recipe.append(rating);
 
 			recipesContainer.append(recipe);
 			console.log(recipesContainer)
 		});
 	};
-
-	function search(recipes) {
-		const recipeList = recipes;
-	
-		const searchField = document.querySelector('.header__search-field')
-	
-		searchField.addEventListener('input', handleSearchFieldInput);
-	
-		function handleSearchFieldInput () {
-			const searchValue = getSearchInputValue()
-			sortProductsBySearch(searchValue)
-		}
-		
-		function sortProductsBySearch(search) {
-			const recipeNodeList = document.querySelectorAll('.card__container');
-			for (const [index, recipe] of recipeNodeList.entries()) {
-				recipe.classList.add('card__container--hidden');
-	
-				if (recipeList[index].name.toLowerCase().includes(search.toLowerCase())) {
-					recipe.classList.remove('card__container--hidden')
-				}
-			}
-		}
-		
-		function getSearchInputValue() {
-			const searchValue = searchField.value;
-	
-			return searchValue;
-		}
-	}
 
 	init();
 }

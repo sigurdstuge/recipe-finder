@@ -31,6 +31,7 @@ list-style: none;
 gap: 10rem;
 font-size: var(--large-font-size);
 }
+
 .navigation__list a{
 	transition: all 0.3s;
 }
@@ -43,15 +44,9 @@ a:visited {
 	color: inherit;
 }
 
-
-/* .header__navigation--visible {
-} */
-
 .header__search-button-image {
 	width: 3.5rem;
 }
-
-
 
 .header__search-field {
 	display: none;

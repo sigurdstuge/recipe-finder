@@ -6,6 +6,10 @@ export default async function recipeSummary() {
 
 	let recipes = [];
 
+	/**
+	 * 
+	 * @returns data from the Sanity database
+	 */
 	async function fetchRecipe() {
 		const query = `*[slug.current == "${slug}"] {
 			_id,
@@ -26,9 +30,9 @@ export default async function recipeSummary() {
 		recipes = await fetchRecipe();
 	}
 
+	// Initiates the current recipe from the URL based on the slug and renders elements.
 	async function init() {
 		await setCurrentRecipe();
-		// console.log(recipes);
 		renderHTML();
 	}
 
