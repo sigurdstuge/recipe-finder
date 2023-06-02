@@ -39,3 +39,5 @@ This is blog site with food as main theme and is built up by HTML, CSS and JS. S
 - Add more dishes
 - Add tips
 - Add rating from the website
+- Add sorting by category
+- Add possibility to submit own recipes
