@@ -36,9 +36,10 @@ export default async function recipeSummary() {
 		renderHTML();
 	}
 
-/** 
-	 * RenderHTML is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
-	*/
+		/**
+		 * RenderHTML is the function that runs changes in HTML. This function loops over the objects in Sanity and creates elements
+		 */ 
+			 
 
 	function renderHTML() {
 		recipes.forEach(recipe => {
