@@ -10,6 +10,10 @@ export default function search(recipes) {
 		sortProductsBySearch(searchValue)
 	}
 	
+	/**
+	 * 
+	 * @param  search  loops over the cards
+	 */
 	function sortProductsBySearch(search) {
 		const recipeNodeList = document.querySelectorAll('.card__container');
 		for (const [index, recipe] of recipeNodeList.entries()) {
@@ -21,6 +25,10 @@ export default function search(recipes) {
 		}
 	}
 	
+	/**
+	 * 
+	 * @returns the result from the value in searchfield
+	 */
 	function getSearchInputValue() {
 		const searchValue = searchField.value;
 
