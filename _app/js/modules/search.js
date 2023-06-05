@@ -12,7 +12,8 @@ export default function search(recipes) {
 	
 	/**
 	 * 
-	 * @param  search  loops over the cards
+	 *  Loops over the cards 
+	 *  Use value from searchfield to hide cards
 	 */
 	function sortProductsBySearch(search) {
 		const recipeNodeList = document.querySelectorAll('.card__container');
